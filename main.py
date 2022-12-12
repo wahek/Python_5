@@ -5,6 +5,7 @@ import random
 candies = 28
 sweets = 150
 coin = random.randint(1,2)
+print(f'Сейчас конфет: {sweets}')
 if coin == 1:
     print('Первый ход за компьютером')
 else:
@@ -29,9 +30,16 @@ while sweets > 57:
 while sweets > 28:
     if coin == 1:
         candies = 1
+        count = 0
+        if sweets == 29:
+            coin += 1
+            print(f'ИИ забирает 1 конфету')
+            print(f'Остаток конфет: 28')
+            break
         while sweets > 29:
             sweets -= 1
             candies += 1
+        candies -= 1
         print(f'ИИ забирает {candies} конфет')
         print(f'Остаток конфет: {sweets}')
         coin += 1
